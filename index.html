@@ -52,15 +52,15 @@
                 </div>
                 <div class="fact-item">
                     <h3>Живий неон: Рибки</h3>
-                    <p>В акваріумах живуть рибки "Неони". Вони мають вздовж тіла яскраву смужку, яка завдяки відбиттю світла сяє точно так само, як неонова вивіска вночі. Це допомагає їм триматися зграєю в темній воді Амазонки.</p>
+                    <p>В акваріумах живуть рибки "Неони". Вони мають вздовж тіла яскраву смужку, яка сяє точно так само, як неонова вивіска вночі. Це допомагає їм триматися зграєю в темній воді Амазонки.</p>
                 </div>
                 <div class="fact-item">
                     <h3>Він дуже самотній</h3>
-                    <p>Це найінертніший газ. Він настільки "гордий", що не утворює жодних хімічних сполук з іншими елементами в природі.</p>
+                    <p>Це найінертніший газ. Він настільки "гордий", що не утворює жодних сполук з іншими елементами.</p>
                 </div>
                 <div class="fact-item">
                     <h3>Рятувальник</h3>
-                    <p>Неонове світло найкраще проходить крізь густий туман і дощ, тому його використовують на маяках та злітних смугах аеродромів.</p>
+                    <p>Неонове світло найкраще проходить крізь туман, тому його використовують на маяках та аеродромах.</p>
                 </div>
             </div>
         </section>
@@ -78,8 +78,36 @@
         </section>
     </main>
 
+    <div id="photo-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="full-photo">
+    </div>
+
     <footer>
         <p>&copy; 2026 Проєкт "Магія Неону". Від зірок до рибок.</p>
     </footer>
+
+    <script>
+        const modal = document.getElementById("photo-modal");
+        const modalImg = document.getElementById("full-photo");
+        const closeBtn = document.querySelector(".close-modal");
+
+        document.querySelectorAll('.photo-item img').forEach(image => {
+            image.onclick = function() {
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+                setTimeout(() => { modal.style.opacity = "1"; }, 10);
+            }
+        });
+
+        closeBtn.onclick = function() {
+            modal.style.opacity = "0";
+            setTimeout(() => { modal.style.display = "none"; }, 300);
+        }
+
+        modal.onclick = function(e) {
+            if (e.target !== modalImg) { closeBtn.onclick(); }
+        }
+    </script>
 </body>
 </html>
