@@ -73,24 +73,44 @@ nav {
     transform: translateY(-3px);
 }
 
-/* ЗАГОЛОВКИ */
+/* ЗАГОЛОВКИ ТА ПРАВКИ ВЧИТЕЛЬКИ */
 .main-header {
     text-align: center;
     padding: 180px 20px 80px;
 }
 
 .neon-title {
-    font-size: clamp(3rem, 10vw, 5rem);
+    font-size: clamp(3.5rem, 12vw, 6rem); /* Трохи збільшено */
     color: #ff00ff;
     text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
     margin: 0;
     text-transform: uppercase;
 }
 
-.subtitle {
-    color: #888;
-    max-width: 700px;
+/* Новий стиль підзаголовка (порада вчительки) */
+.main-subtitle {
+    font-size: 1.5rem; /* Збільшений шрифт */
+    color: #ffffff;    /* Світлий колір, щоб не губився */
+    max-width: 850px;
+    margin: 25px auto 10px;
+    font-weight: 300;
+    line-height: 1.4;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Неонова смужка "Графіті" (порада вчительки) */
+.graffiti-line {
+    width: 250px;
+    height: 8px;
+    background: #00f2ff;
     margin: 20px auto;
+    border-radius: 40% 60% 40% 60%; /* Трохи нерівна форма */
+    filter: blur(3px); /* Розмиття */
+    box-shadow: 
+        0 0 15px #00f2ff,
+        0 0 35px #00f2ff,
+        0 0 60px rgba(0, 242, 255, 0.6);
+    opacity: 0.8;
 }
 
 section {
@@ -134,7 +154,7 @@ section {
 
 .fact-item h3 { color: #ff00ff; margin-top: 0; }
 
-/* ГАЛЕРЕЯ: ЕФЕКТ КЛІТКИ */
+/* ГАЛЕРЕЯ ТА МОДАЛКА */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -154,7 +174,7 @@ section {
 .photo-item:hover {
     border-color: #00f2ff;
     box-shadow: 0 15px 30px rgba(0, 242, 255, 0.4);
-    transform: translateY(-15px) scale(1.05); /* Випливає з клітки */
+    transform: translateY(-15px) scale(1.05);
 }
 
 .photo-item img {
